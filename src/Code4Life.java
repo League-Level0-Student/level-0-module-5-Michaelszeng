@@ -7,9 +7,13 @@ import java.io.File;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.swing.JOptionPane;
 
 
 public class Code4Life {
+	public static void main(String[] args) {
+		
+	
 	/*
      * Ask the user how many hours they spent coding this week.
      * 
@@ -19,8 +23,22 @@ public class Code4Life {
      * 
      * 3. If it's more than 5, play the Batman theme song.
      */
-
-
+	String hrs = JOptionPane.showInputDialog("How many hours did you code this week?");
+	int num=Integer.parseInt(hrs);
+	if (num>3 && num<5) {
+		JOptionPane.showMessageDialog(null, "You is code neenja");
+	}
+	if (num<2) {
+		JOptionPane.showMessageDialog(null, "Stap waching UTUBE and start coding");
+	}
+	if (num>5) {
+		playBatmanTheme();
+	}
+	else {
+		JOptionPane.showMessageDialog(null, "You is oky");
+	}
+	}
+	
     private static void playBatmanTheme() {
     	try {
    		 Clip clip = AudioSystem.getClip();
