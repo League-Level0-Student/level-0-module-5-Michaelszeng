@@ -21,9 +21,18 @@ System.out.println(pi.charAt(0) + ""+pi.charAt(1) +""+ pi.charAt(2));
 			// 4. Create a for loop that will step through each digit of pi (steps 5-8)
 			//    NOTE: The number of digits in your string will be
 			//       yourStringVariable.length()
-for (int i=0; i<pi.length(); i++) {
+String output=pi.substring(0, 3);
+for (int i=0; i<pi.length()-3; i++) {
 	String next= JOptionPane.showInputDialog("What do you think is the next digit of pi?");
-	
+	if(next.charAt(0)==pi.charAt(3+i)) {
+		System.out.println("correct!");
+		output+=next.substring(0, 1);
+		System.out.println(output);
+	}
+	else {
+		System.out.println("incorrect. Please try again.");
+		break;
+	}
 }
 				// 5. Ask the user for the NEXT digit of pi.
 
